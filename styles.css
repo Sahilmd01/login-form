@@ -1,0 +1,191 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: #000; /* Dark background */
+    cursor: none; /* Hide default cursor */
+  }
+  
+  /* Background with bubbles */
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .background::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1));
+    z-index: -1;
+  }
+  
+  .bubble {
+    position: absolute;
+    width: 50px; /* Increased bubble size */
+    height: 50px; /* Increased bubble size */
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: bubbleAnimation 10s infinite, bubbleShine 2s infinite;
+    opacity: 0.7;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Shining effect */
+  }
+  
+  /* Create dynamic bubbles */
+  @keyframes bubbleAnimation {
+    0% {
+      transform: translateY(0) scale(0.8);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(-50vh) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) scale(0.6);
+      opacity: 0.4;
+    }
+  }
+  
+  /* Bubble shining effect */
+  @keyframes bubbleShine {
+    0% {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.6);
+    }
+    100% {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.4);
+    }
+  }
+  
+  /* Create the glowing cursor */
+  .cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, red, blue, green);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 0, 0, 0.5), 0 0 30px rgba(0, 255, 0, 0.5);
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: difference; /* Creates cool contrast on dark backgrounds */
+    animation: rgb-cycle 2s infinite;
+  }
+  
+  /* RGB animation for cursor */
+  @keyframes rgb-cycle {
+    0% { background: linear-gradient(45deg, red, blue, green); }
+    33% { background: linear-gradient(45deg, green, yellow, red); }
+    66% { background: linear-gradient(45deg, blue, pink, yellow); }
+    100% { background: linear-gradient(45deg, red, blue, green); }
+  }
+  
+  /* Glowing animation for login container */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+    }
+    100% {
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    }
+  }
+  
+  .login-container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+    animation: glow 3s infinite;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #ff4e50, #f9d423);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Register link glow effect */
+  .register-link {
+    color: #00ffcc;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  .register-link:hover {
+    color: #ff9900;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8), 0px 0px 15px rgba(255, 153, 0, 0.8);
+  }
+  
+  .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  

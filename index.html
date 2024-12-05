@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bubble Login with RGB Cursor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background">
+    <!-- Bubbles will be animated using CSS -->
+    <div class="bubble" style="top: 10%; left: 20%;"></div>
+    <div class="bubble" style="top: 15%; left: 50%;"></div>
+    <div class="bubble" style="top: 50%; left: 70%;"></div>
+    <div class="bubble" style="top: 80%; left: 40%;"></div>
+  </div>
+  <div class="login-container">
+    <form>
+      <h2>Login</h2>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email">
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+      </div>
+      <div class="options">
+        <label><input type="checkbox"> Remember me</label>
+        <a href="#">Forgot Password?</a>
+      </div>
+      <button type="submit">Login</button>
+      <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+    </form>
+  </div>
+  <div class="cursor"></div>
+  <script src="script.js"></script>
+</body>
+</html>
